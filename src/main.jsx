@@ -19,7 +19,14 @@ import { SignupForm } from './components/signup-form';
 import { ThemeProvider } from './context/ThemeContext';
 import { Provider } from 'react-redux';
 import store from './store/redux/store';
-import TaskForm, { createTaskAction } from './forms/TaskForm';
+import {
+  createTaskAction,
+  deleteTaskAction,
+  TaskForm,
+  taskLoader,
+  TaskPage,
+  updateTaskAction,
+} from './forms/Tasks';
 // import Users from './pages/Users';
 // import { protectedLoader } from './loaders/protectedLoader';
 // import UserDetails from './pages/UserDetails';
@@ -108,9 +115,21 @@ const router = createBrowserRouter(
         },
 
         {
+          path: 'tasks',
+          element: <TaskPage />,
+          loader: taskLoader,
+          action: deleteTaskAction,
+        },
+
+        {
           path: 'create',
           element: <TaskForm />,
           action: createTaskAction,
+        },
+
+        {
+          path: 'update/:id',
+          action: updateTaskAction,
         },
       ],
     },

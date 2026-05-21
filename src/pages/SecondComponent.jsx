@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const SecondComponent = () => {
   const count = useCount((state) => state.count);
   return (
-    <div>
-      <Card className='mx-auto w-full max-w-sm mb-5'>
+    <div className='mb-5'>
+      <Card>
         <CardHeader>
-          <CardTitle>First Component</CardTitle>
+          <CardTitle>Second Component</CardTitle>
         </CardHeader>
         <CardContent>
           <p>Count: {count}</p>

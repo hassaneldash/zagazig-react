@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const FirstComponents = () => {
+const FirstComponent = () => {
   // Consume Data From Zustand Store
   const count = useCount((state) => state.count);
 
@@ -23,8 +23,8 @@ const FirstComponents = () => {
   const incrementByValue = useCount((state) => state.incrementByValue);
 
   return (
-    <>
-      <Card className='mx-auto w-full max-w-sm mb-5'>
+    <div className='mb-2'>
+      <Card>
         <CardHeader>
           <CardTitle>First Component</CardTitle>
         </CardHeader>
@@ -32,22 +32,28 @@ const FirstComponents = () => {
           <p>Count: {count}</p>
         </CardContent>
         <CardFooter>
-        <Button onClick={reset}>Reset</Button>
-          <Button onClick={increment}>Increment</Button>
-          <Button onClick={decrement}>Decrement</Button>
+          <Button onClick={reset}>Reset</Button>
+          <Button className='ms-2' variant='outline' onClick={increment}>
+            Increment
+          </Button>
+          <Button className='ms-2' onClick={decrement}>
+            Decrement
+          </Button>
 
-          <Button onClick={incrementByTen}>Increment By Ten</Button>
+          <Button className='ms-2' variant='outline' onClick={incrementByTen}>
+            Increment By Ten
+          </Button>
           <Button
+            className='ms-2'
             onClick={() => {
               incrementByValue(15);
             }}>
             Increment By Value
           </Button>
-          
         </CardFooter>
       </Card>
-    </>
+    </div>
   );
 };
 
-export default FirstComponents;
+export default FirstComponent;

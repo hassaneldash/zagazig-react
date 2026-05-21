@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import About from './pages/About';
 import { Button } from './components/ui/button';
-import FirstComponents from './pages/FirstComponents';
+import FirstComponent from './pages/FirstComponent';
 import SecondComponent from './pages/SecondComponent';
 import {
   Card,
@@ -31,12 +31,16 @@ const App = () => {
       </Button>
 
       <About data={count} /> */}
-
-      <FirstComponents />
+      <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mt-5'>
+        Zustand
+      </h1>
+      <FirstComponent />
 
       <SecondComponent />
 
-      <h1>Redux Toolkit (RTK)</h1>
+      <h1 className='scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mt-5'>
+        Redux Toolkit (RTK)
+      </h1>
       <Card>
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
@@ -46,9 +50,15 @@ const App = () => {
         </CardContent>
         <CardFooter>
           <Button onClick={() => dispatch(increase())}>increase</Button>
-          <Button onClick={() => dispatch(decrease())}>decrease</Button>
-          <Button onClick={() => dispatch(increaseByValue(25))}>Increase By 25</Button>
-          <Button onClick={() => dispatch(reset())}>Reset</Button>
+          <Button className='ms-2' variant='outline' onClick={() => dispatch(decrease())}>
+            decrease
+          </Button>
+          <Button className='ms-2' onClick={() => dispatch(increaseByValue(25))}>
+            Increase By 25
+          </Button>
+          <Button className='ms-2' variant='outline' onClick={() => dispatch(reset())}>
+            Reset
+          </Button>
         </CardFooter>
       </Card>
     </>
@@ -162,11 +172,9 @@ export default store;
 // Use Redux State and Actions in the React Component
 // useDispatch, useSelector
 
-// React Hook Form => npm i react-hook-form 
-
+// React Hook Form => npm i react-hook-form
 
 // Zod => npm i zod @hookform/resolvers
-
 
 // React Router Actions
 

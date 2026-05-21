@@ -16,7 +16,7 @@ const MainLayout = () => {
     <div
       className='flex flex-col min-h-screen'
       style={{
-        background: theme === 'light' ? '#fff' : '#333',
+        backgroundColor: theme === 'light' ? '#fff' : '#333',
         color: theme === 'light' ? '#000' : '#fff',
       }}>
       <Navbar />
@@ -24,11 +24,6 @@ const MainLayout = () => {
       <main className='container grow mx-auto p-10 max-w-3xl'>
         <Outlet /> {/* Placeholder for the injected component from Route */}
       </main>
-
-      <p> Theme: {theme}</p>
-      <Button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-        {theme === 'light' ? '🌙' : '☀️'}
-      </Button>
 
       <footer className='border-t p-6 text-center text-sm'>
         <p>© 2026 ITI by Hassan ELDash with 💖</p>
