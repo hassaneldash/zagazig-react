@@ -1,0 +1,1 @@
+import{n as e}from"./index-B0McYGy1.js";var t=e.create({baseURL:`https://api.escuelajs.co/api/v1/users`});export{t};
